@@ -1,0 +1,129 @@
+2026-04-09T13:03:25.078-03:00  INFO 1487790 --- [tasklist] [Test worker] b.c.j.t.api.TaskBoardApiIntegrationTest  : Starting TaskBoardApiIntegrationTest v1.0.0-SNAPSHOT using Java 23 with PID 1487790 (started by anderson in /home/anderson/Documents/Projetos/personal/multi-user-todo/jtech-tasklist-backend)
+2026-04-09T13:03:25.080-03:00 DEBUG 1487790 --- [tasklist] [Test worker] b.c.j.t.api.TaskBoardApiIntegrationTest  : Running with Spring Boot v3.5.5, Spring v6.2.10
+2026-04-09T13:03:25.081-03:00  INFO 1487790 --- [tasklist] [Test worker] b.c.j.t.api.TaskBoardApiIntegrationTest  : The following 1 profile is active: "dev"
+2026-04-09T13:03:26.603-03:00  INFO 1487790 --- [tasklist] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-09T13:03:26.673-03:00  INFO 1487790 --- [tasklist] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
+2026-04-09T13:03:27.387-03:00  INFO 1487790 --- [tasklist] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-09T13:03:27.587-03:00  INFO 1487790 --- [tasklist] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5454e13f
+2026-04-09T13:03:27.590-03:00  INFO 1487790 --- [tasklist] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-09T13:03:27.632-03:00  INFO 1487790 --- [tasklist] [Test worker] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:32769/test?loggerLevel=OFF (PostgreSQL 16.13)
+2026-04-09T13:03:27.677-03:00  INFO 1487790 --- [tasklist] [Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-04-09T13:03:27.680-03:00  INFO 1487790 --- [tasklist] [Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.019s)
+2026-04-09T13:03:27.695-03:00  INFO 1487790 --- [tasklist] [Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-04-09T13:03:27.743-03:00  INFO 1487790 --- [tasklist] [Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-04-09T13:03:27.756-03:00  INFO 1487790 --- [tasklist] [Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - init schema"
+2026-04-09T13:03:27.792-03:00  INFO 1487790 --- [tasklist] [Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.022s)
+2026-04-09T13:03:27.915-03:00  INFO 1487790 --- [tasklist] [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-09T13:03:27.982-03:00  INFO 1487790 --- [tasklist] [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2026-04-09T13:03:28.025-03:00  INFO 1487790 --- [tasklist] [Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-09T13:03:28.432-03:00  INFO 1487790 --- [tasklist] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-09T13:03:28.498-03:00  WARN 1487790 --- [tasklist] [Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-09T13:03:28.515-03:00  INFO 1487790 --- [tasklist] [Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-09T13:03:29.628-03:00  INFO 1487790 --- [tasklist] [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-09T13:03:29.673-03:00  INFO 1487790 --- [tasklist] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-09T13:03:30.426-03:00  WARN 1487790 --- [tasklist] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-09T13:03:32.129-03:00  INFO 1487790 --- [tasklist] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2026-04-09T13:03:32.937-03:00  INFO 1487790 --- [tasklist] [Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-04-09T13:03:32.938-03:00  INFO 1487790 --- [tasklist] [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-04-09T13:03:32.940-03:00  INFO 1487790 --- [tasklist] [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-04-09T13:03:33.031-03:00  INFO 1487790 --- [tasklist] [Test worker] b.c.j.t.api.TaskBoardApiIntegrationTest  : Started TaskBoardApiIntegrationTest in 8.532 seconds (process running for 19.428)
+2026-04-09T13:03:33.124-03:00  INFO 1487790 --- [tasklist] [Test worker] b.c.j.t.c.i.utils.ReadyEventListener     : >>> Connector Ready
+2026-04-09T13:03:33.124-03:00  INFO 1487790 --- [tasklist] [Test worker] b.c.j.t.c.i.utils.ReadyEventListener     : ======================================================
+2026-04-09T13:03:33.124-03:00  INFO 1487790 --- [tasklist] [Test worker] b.c.j.t.c.i.utils.ReadyEventListener     : == Execute mode:.....................'LOCAL'
+2026-04-09T13:03:33.125-03:00  INFO 1487790 --- [tasklist] [Test worker] b.c.j.t.c.i.utils.ReadyEventListener     : ======================================================
+2026-04-09T13:03:35.542-03:00  INFO 1487790 --- [tasklist] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-09T13:03:35.546-03:00  INFO 1487790 --- [tasklist] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-09T13:03:35.549-03:00  INFO 1487790 --- [tasklist] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-09T13:54:56.691-03:00  INFO 1503328 --- [tasklist] [Test worker] b.c.j.t.api.TaskBoardApiIntegrationTest  : Starting TaskBoardApiIntegrationTest v1.0.0-SNAPSHOT using Java 23 with PID 1503328 (started by anderson in /home/anderson/Documents/Projetos/personal/multi-user-todo/jtech-tasklist-backend)
+2026-04-09T13:54:56.692-03:00 DEBUG 1503328 --- [tasklist] [Test worker] b.c.j.t.api.TaskBoardApiIntegrationTest  : Running with Spring Boot v3.5.5, Spring v6.2.10
+2026-04-09T13:54:56.693-03:00  INFO 1503328 --- [tasklist] [Test worker] b.c.j.t.api.TaskBoardApiIntegrationTest  : The following 1 profile is active: "dev"
+2026-04-09T13:54:58.292-03:00  INFO 1503328 --- [tasklist] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-09T13:54:58.370-03:00  INFO 1503328 --- [tasklist] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 3 JPA repository interfaces.
+2026-04-09T13:54:59.177-03:00  INFO 1503328 --- [tasklist] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-09T13:54:59.389-03:00  INFO 1503328 --- [tasklist] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2fe328b9
+2026-04-09T13:54:59.391-03:00  INFO 1503328 --- [tasklist] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-09T13:54:59.436-03:00  INFO 1503328 --- [tasklist] [Test worker] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:32771/test?loggerLevel=OFF (PostgreSQL 16.13)
+2026-04-09T13:54:59.476-03:00  INFO 1503328 --- [tasklist] [Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-04-09T13:54:59.482-03:00  INFO 1503328 --- [tasklist] [Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.021s)
+2026-04-09T13:54:59.500-03:00  INFO 1503328 --- [tasklist] [Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-04-09T13:54:59.552-03:00  INFO 1503328 --- [tasklist] [Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-04-09T13:54:59.563-03:00  INFO 1503328 --- [tasklist] [Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - init schema"
+2026-04-09T13:54:59.598-03:00  INFO 1503328 --- [tasklist] [Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.017s)
+2026-04-09T13:54:59.720-03:00  INFO 1503328 --- [tasklist] [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-09T13:54:59.788-03:00  INFO 1503328 --- [tasklist] [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2026-04-09T13:54:59.832-03:00  INFO 1503328 --- [tasklist] [Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-09T13:55:00.272-03:00  INFO 1503328 --- [tasklist] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-09T13:55:00.344-03:00  WARN 1503328 --- [tasklist] [Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-09T13:55:00.363-03:00  INFO 1503328 --- [tasklist] [Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-09T13:55:01.623-03:00  INFO 1503328 --- [tasklist] [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-09T13:55:01.670-03:00  INFO 1503328 --- [tasklist] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-09T13:55:02.522-03:00  WARN 1503328 --- [tasklist] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-09T13:55:04.023-03:00  INFO 1503328 --- [tasklist] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2026-04-09T13:55:04.815-03:00  INFO 1503328 --- [tasklist] [Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-04-09T13:55:04.816-03:00  INFO 1503328 --- [tasklist] [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-04-09T13:55:04.817-03:00  INFO 1503328 --- [tasklist] [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-04-09T13:55:04.901-03:00  INFO 1503328 --- [tasklist] [Test worker] b.c.j.t.api.TaskBoardApiIntegrationTest  : Started TaskBoardApiIntegrationTest in 8.724 seconds (process running for 14.3)
+2026-04-09T13:55:04.969-03:00  INFO 1503328 --- [tasklist] [Test worker] b.c.j.t.c.i.utils.ReadyEventListener     : >>> Connector Ready
+2026-04-09T13:55:04.969-03:00  INFO 1503328 --- [tasklist] [Test worker] b.c.j.t.c.i.utils.ReadyEventListener     : ======================================================
+2026-04-09T13:55:04.969-03:00  INFO 1503328 --- [tasklist] [Test worker] b.c.j.t.c.i.utils.ReadyEventListener     : == Execute mode:.....................'LOCAL'
+2026-04-09T13:55:04.969-03:00  INFO 1503328 --- [tasklist] [Test worker] b.c.j.t.c.i.utils.ReadyEventListener     : ======================================================
+2026-04-09T13:55:08.146-03:00  INFO 1503328 --- [tasklist] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-09T13:55:08.152-03:00  INFO 1503328 --- [tasklist] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-09T13:55:08.155-03:00  INFO 1503328 --- [tasklist] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-09T14:29:57.565-03:00  INFO 1516131 --- [tasklist] [Test worker] b.c.j.t.api.TaskBoardApiIntegrationTest  : Starting TaskBoardApiIntegrationTest v1.0.0-SNAPSHOT using Java 23 with PID 1516131 (started by anderson in /home/anderson/Documents/Projetos/personal/multi-user-todo/jtech-tasklist-backend)
+2026-04-09T14:29:57.567-03:00 DEBUG 1516131 --- [tasklist] [Test worker] b.c.j.t.api.TaskBoardApiIntegrationTest  : Running with Spring Boot v3.5.5, Spring v6.2.10
+2026-04-09T14:29:57.568-03:00  INFO 1516131 --- [tasklist] [Test worker] b.c.j.t.api.TaskBoardApiIntegrationTest  : The following 1 profile is active: "dev"
+2026-04-09T14:29:59.682-03:00  INFO 1516131 --- [tasklist] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-09T14:29:59.793-03:00  INFO 1516131 --- [tasklist] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 3 JPA repository interfaces.
+2026-04-09T14:30:00.806-03:00  INFO 1516131 --- [tasklist] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-09T14:30:01.149-03:00  INFO 1516131 --- [tasklist] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@68ddb10c
+2026-04-09T14:30:01.153-03:00  INFO 1516131 --- [tasklist] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-09T14:30:01.211-03:00  INFO 1516131 --- [tasklist] [Test worker] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:32773/test?loggerLevel=OFF (PostgreSQL 16.13)
+2026-04-09T14:30:01.261-03:00  INFO 1516131 --- [tasklist] [Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-04-09T14:30:01.266-03:00  INFO 1516131 --- [tasklist] [Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.023s)
+2026-04-09T14:30:01.286-03:00  INFO 1516131 --- [tasklist] [Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-04-09T14:30:01.345-03:00  INFO 1516131 --- [tasklist] [Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-04-09T14:30:01.357-03:00  INFO 1516131 --- [tasklist] [Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - init schema"
+2026-04-09T14:30:01.398-03:00  INFO 1516131 --- [tasklist] [Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.020s)
+2026-04-09T14:30:01.557-03:00  INFO 1516131 --- [tasklist] [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-09T14:30:01.653-03:00  INFO 1516131 --- [tasklist] [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2026-04-09T14:30:01.731-03:00  INFO 1516131 --- [tasklist] [Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-09T14:30:02.292-03:00  INFO 1516131 --- [tasklist] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-09T14:30:02.402-03:00  WARN 1516131 --- [tasklist] [Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-09T14:30:02.443-03:00  INFO 1516131 --- [tasklist] [Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-09T14:30:04.338-03:00  INFO 1516131 --- [tasklist] [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-09T14:30:04.410-03:00  INFO 1516131 --- [tasklist] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-09T14:30:05.822-03:00  WARN 1516131 --- [tasklist] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-09T14:30:08.347-03:00  INFO 1516131 --- [tasklist] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2026-04-09T14:30:09.562-03:00  INFO 1516131 --- [tasklist] [Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-04-09T14:30:09.562-03:00  INFO 1516131 --- [tasklist] [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-04-09T14:30:09.567-03:00  INFO 1516131 --- [tasklist] [Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2026-04-09T14:30:09.732-03:00  INFO 1516131 --- [tasklist] [Test worker] b.c.j.t.api.TaskBoardApiIntegrationTest  : Started TaskBoardApiIntegrationTest in 13.032 seconds (process running for 19.653)
+2026-04-09T14:30:09.875-03:00  INFO 1516131 --- [tasklist] [Test worker] b.c.j.t.c.i.utils.ReadyEventListener     : >>> Connector Ready
+2026-04-09T14:30:09.875-03:00  INFO 1516131 --- [tasklist] [Test worker] b.c.j.t.c.i.utils.ReadyEventListener     : ======================================================
+2026-04-09T14:30:09.875-03:00  INFO 1516131 --- [tasklist] [Test worker] b.c.j.t.c.i.utils.ReadyEventListener     : == Execute mode:.....................'LOCAL'
+2026-04-09T14:30:09.875-03:00  INFO 1516131 --- [tasklist] [Test worker] b.c.j.t.c.i.utils.ReadyEventListener     : ======================================================
+2026-04-09T14:30:15.179-03:00  INFO 1516131 --- [tasklist] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-09T14:30:15.197-03:00  INFO 1516131 --- [tasklist] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-09T14:30:15.215-03:00  INFO 1516131 --- [tasklist] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

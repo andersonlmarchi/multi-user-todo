@@ -6,23 +6,31 @@ spring:
     active: ${PROFILE:dev}
   datasource:
     driverClassName: org.postgresql.Driver
-    url: 
-      jdbc:postgresql://${DS_URL:localhost}:${DS_PORT:5432}/${DS_DATABASE:sansys_database}
+    url: jdbc:postgresql://${DS_URL:localhost}:${DS_PORT:5433}/${DS_DATABASE:tasklist_db}
     password: ${DS_PASS:postgres}
     username: ${DS_USER:postgres}
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: 'true'
     hibernate:
-      ddl-auto: none
+      ddl-auto: validate
     generate-ddl: 'false'
+app:
+  jwt:
+    secret: ${JWT_SECRET:dev-jwt-secret-min-32-bytes-long!!}
+    access-token-minutes: ${JWT_ACCESS_MINUTES:15}
+    refresh-token-days: ${JWT_REFRESH_DAYS:7}
+    issuer: tasklist-api
 management:
   endpoints:
     web:
       exposure:
         include: '*'
 server:
-  port: ${PORT:0}
+  port: ${PORT:8080}
   forward-headers-strategy: framework
 logging:
   level:

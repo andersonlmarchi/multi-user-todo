@@ -9,13 +9,16 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with J-Tech.
  */
-package br.com.jtech.tasklist.config.infra.handlers;
+package br.com.jtech.tasklist.config.infra.utils;
 
 
 
+import br.com.jtech.tasklist.application.core.exceptions.ApiConflictException;
+import br.com.jtech.tasklist.application.core.exceptions.ResourceNotFoundException;
 import br.com.jtech.tasklist.config.infra.exceptions.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -63,6 +66,30 @@ public class GlobalExceptionHandler {
 
         }
         return errors;
+    }
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<ApiError> notFound(ResourceNotFoundException ex) {
+        ApiError error = new ApiError(HttpStatus.NOT_FOUND);
+        error.setMessage(ex.getMessage());
+        error.setTimestamp(LocalDateTime.now());
+        return buildResponseEntity(error);
+    }
+
+    @ExceptionHandler(ApiConflictException.class)
+    public ResponseEntity<ApiError> conflict(ApiConflictException ex) {
+        ApiError error = new ApiError(HttpStatus.CONFLICT);
+        error.setMessage(ex.getMessage());
+        error.setTimestamp(LocalDateTime.now());
+        return buildResponseEntity(error);
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<ApiError> badCredentials(BadCredentialsException ex) {
+        ApiError error = new ApiError(HttpStatus.UNAUTHORIZED);
+        error.setMessage(ex.getMessage());
+        error.setTimestamp(LocalDateTime.now());
+        return buildResponseEntity(error);
     }
 
 }

@@ -1,0 +1,52 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: tasklist_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - tasklist_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d tasklist_db"]
+      interval: 3s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./jtech-tasklist-backend
+      dockerfile: Dockerfile
+    environment:
+      PROFILE: dev
+      PORT: 8080
+      DS_URL: db
+      DS_PORT: 5432
+      DS_DATABASE: tasklist_db
+      DS_USER: postgres
+      DS_PASS: postgres
+      JWT_SECRET: dev-docker-jwt-secret-min-32-bytes!!
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    image: node:22-alpine
+    working_dir: /app
+    volumes:
+      - ./jtech-tasklist-frontend:/app
+      - /app/node_modules
+    environment:
+      VITE_API_BASE_URL: http://localhost:8080
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0 --port 5173"
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  tasklist_pg:
