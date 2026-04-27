@@ -1,12 +1,24 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
+import { useDisplay } from 'vuetify'
 import { useAuthStore } from '@/stores/auth'
 import { useAppStore } from '@/stores/app'
 
 const auth = useAuthStore()
 const app = useAppStore()
 const router = useRouter()
+const display = useDisplay()
+const drawerOpen = ref(false)
+const isMobile = computed(() => display.mdAndDown.value)
+const drawerVisible = computed({
+  get: () => (isMobile.value ? drawerOpen.value : true),
+  set: (value: boolean) => {
+    if (isMobile.value) {
+      drawerOpen.value = value
+    }
+  },
+})
 
 const dialogNewList = ref(false)
 const dialogRenameList = ref(false)
@@ -96,6 +108,9 @@ async function unarchiveList(id: string) {
 
 async function select(id: string) {
   app.selectList(id)
+  if (isMobile.value) {
+    drawerOpen.value = false
+  }
 }
 
 async function openNewTask() {
@@ -128,13 +143,20 @@ async function unarchiveTask(id: string) {
 
 <template>
   <v-app-bar color="primary" prominent>
+    <v-app-bar-nav-icon v-if="isMobile" @click="drawerOpen = !drawerOpen" />
     <v-app-bar-title>Minhas listas</v-app-bar-title>
     <v-spacer />
-    <span class="mr-4 text-caption">{{ auth.userEmail }}</span>
+    <span v-if="!isMobile" class="mr-4 text-caption">{{ auth.userEmail }}</span>
     <v-btn variant="text" @click="logout">Sair</v-btn>
   </v-app-bar>
 
-  <v-navigation-drawer permanent width="280">
+  <v-navigation-drawer
+    v-model="drawerVisible"
+    :permanent="!isMobile"
+    :temporary="isMobile"
+    :location="isMobile ? 'start' : undefined"
+    width="280"
+  >
     <v-list density="compact">
       <v-list-subheader>
         <span>Listas</span>
@@ -173,23 +195,29 @@ async function unarchiveTask(id: string) {
   </v-navigation-drawer>
 
   <v-main>
-    <v-container fluid>
+    <v-container fluid class="pa-3 pa-sm-4">
       <v-row v-if="!app.selectedListId" align="center" justify="center">
         <v-col cols="12" class="text-center text-medium-emphasis">Selecione ou crie uma lista.</v-col>
       </v-row>
       <template v-else>
         <v-row align="center" class="mb-2">
-          <v-col cols="auto">
+          <v-col cols="12" sm="auto">
             <h2 class="text-h6">
               {{ app.lists.find((l) => l.id === app.selectedListId)?.name }}
             </h2>
           </v-col>
-          <v-col cols="auto">
-            <v-switch v-model="app.taskArchivedView" hide-details inset label="Tarefas arquivadas" />
+          <v-col cols="12" sm="auto">
+            <v-switch
+              v-model="app.taskArchivedView"
+              hide-details
+              inset
+              label="Tarefas arquivadas"
+              class="mt-n2 mt-sm-0"
+            />
           </v-col>
-          <v-spacer />
-          <v-col cols="auto">
-            <v-btn color="primary" @click="openNewTask">Nova tarefa</v-btn>
+          <v-spacer class="d-none d-sm-block" />
+          <v-col cols="12" sm="auto">
+            <v-btn color="primary" :block="isMobile" @click="openNewTask">Nova tarefa</v-btn>
           </v-col>
         </v-row>
         <v-list lines="three">
