@@ -5,16 +5,64 @@
   min-height: 100vh;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+:focus-visible {
+  outline: 3px solid rgba(var(--v-theme-primary), 0.45);
+  outline-offset: 2px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.v-main {
+  background:
+    radial-gradient(circle at 5% 0%, rgba(var(--v-theme-primary), 0.08), transparent 40%),
+    radial-gradient(circle at 90% 0%, rgba(var(--v-theme-secondary), 0.08), transparent 45%),
+    rgb(var(--v-theme-background));
+}
+
+/* Global typography rhythm */
+.v-application .text-h1,
+.v-application .text-h2,
+.v-application .text-h3,
+.v-application .text-h4,
+.v-application .text-h5,
+.v-application .text-h6,
+.v-application .text-subtitle-1,
+.v-application .text-subtitle-2 {
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  margin-bottom: 0.25rem;
+}
+
+.v-application .text-body-1,
+.v-application .text-body-2,
+.v-application .text-caption,
+.v-application .text-overline,
+.v-application .v-list-item-title,
+.v-application .v-list-item-subtitle,
+.v-application .v-card-title,
+.v-application .v-card-text,
+.v-application .v-btn {
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+/* Input internal spacing and placeholder breathing room */
+.v-application .v-field.v-field--variant-outlined {
+  --v-field-padding-start: 14px;
+  --v-field-padding-end: 14px;
+}
+
+.v-application .v-field.v-field--variant-outlined .v-field__input {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+.v-application .v-field.v-field--variant-outlined input,
+.v-application .v-field.v-field--variant-outlined textarea {
+  padding-inline: 2px !important;
+  letter-spacing: 0.012em;
+}
+
+.v-application .v-field.v-field--variant-outlined input::placeholder,
+.v-application .v-field.v-field--variant-outlined textarea::placeholder {
+  letter-spacing: 0.012em;
+  opacity: 0.84;
 }
